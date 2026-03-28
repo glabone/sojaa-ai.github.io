@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('_UmZCEmNjaOW_mmyf');</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -953,23 +955,40 @@
       observer.observe(el);
     });
 
-    // Form submit: open mailto to glauco.labone@gmail.com
+    // Form submit: send email via EmailJS
     document.querySelector('.form-submit').addEventListener('click', () => {
       const name    = document.getElementById('name').value.trim();
       const email   = document.getElementById('email').value.trim();
       const org     = document.getElementById('org').value.trim();
       const product = document.getElementById('product').value;
       const message = document.getElementById('message').value.trim();
+
       if (!email) { alert('Please enter your email address.'); return; }
-      const subject = encodeURIComponent('Sojaa.ai Inquiry' + (product ? ': ' + product : ''));
-      const body    = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Organization: ' + org + '\n' +
-        'Interested in: ' + product + '\n\n' +
-        'Message:\n' + message
-      );
-      window.location.href = 'mailto:glauco.labone@gmail.com?subject=' + subject + '&body=' + body;
+
+      const btn = document.querySelector('.form-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      emailjs.send('service_1un78ht', 'template_awjimix', {
+        from_name:    name,
+        from_email:   email,
+        organization: org,
+        product:      product,
+        message:      message,
+      }).then(() => {
+        btn.textContent = 'Message sent ✓';
+        btn.style.background = '#22c55e';
+        document.getElementById('name').value    = '';
+        document.getElementById('email').value   = '';
+        document.getElementById('org').value     = '';
+        document.getElementById('product').value = '';
+        document.getElementById('message').value = '';
+      }).catch(err => {
+        console.error('EmailJS error:', err);
+        btn.textContent = 'Failed — try again';
+        btn.style.background = '#ef4444';
+        btn.disabled = false;
+      });
     });
   </script>
 </body>
