@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Mission — Sojaa.ai</title>
+  <meta name="description" content="Sojaa.ai exists to make AI accessible to everyone — from public hospitals to rural schools, from NGOs to small veterinary clinics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #05080f;
+      --surface: #0c1220;
+      --surface2: #111827;
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(56,189,165,0.35);
+      --teal: #38bda5;
+      --teal-dim: rgba(56,189,165,0.12);
+      --teal-glow: rgba(56,189,165,0.22);
+      --cyan: #67e8f9;
+      --text: #f0f4f8;
+      --muted: #7a8ea8;
+      --muted2: #4e6070;
+      --font-head: 'Sora', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(5,8,15,0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 1.35rem; font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .nav-logo .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--teal); display: inline-block;
+      box-shadow: 0 0 10px var(--teal);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.8); }
+    }
+
+    .nav-back {
+      display: flex; align-items: center; gap: 0.4rem;
+      color: var(--muted); text-decoration: none;
+      font-size: 0.88rem; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+    .nav-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── HERO ── */
+    .mission-hero {
+      min-height: 70vh;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 10rem 4rem 5rem;
+      position: relative; overflow: hidden;
+      max-width: 1100px; margin: 0 auto;
+    }
+
+    .orb {
+      position: fixed; border-radius: 50%;
+      filter: blur(100px); pointer-events: none; z-index: 0;
+    }
+    .orb-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(56,189,165,0.14) 0%, transparent 70%);
+      top: -150px; right: -100px;
+      animation: drift 10s ease-in-out infinite alternate;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(103,232,249,0.08) 0%, transparent 70%);
+      bottom: 20%; left: -80px;
+      animation: drift 13s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes drift {
+      0%   { transform: translate(0, 0); }
+      100% { transform: translate(40px, 30px); }
+    }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--muted); text-decoration: none;
+      font-size: 0.85rem; margin-bottom: 2.5rem;
+      transition: color 0.2s; position: relative; z-index: 1;
+      animation: fadeUp 0.5s ease both;
+    }
+    .back-link:hover { color: var(--teal); }
+    .back-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .hero-label {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1rem;
+      position: relative; z-index: 1;
+      animation: fadeUp 0.55s ease 0.05s both;
+    }
+
+    .mission-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      max-width: 780px;
+      position: relative; z-index: 1;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+
+    .mission-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem; color: var(--muted);
+      max-width: 580px; line-height: 1.75;
+      margin-top: 1.8rem;
+      position: relative; z-index: 1;
+      animation: fadeUp 0.6s ease 0.2s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 4rem;
+    }
+    .divider hr {
+      border: none; border-top: 0.5px solid var(--border);
+    }
+
+    /* ── CORE STATEMENT ── */
+    .core-statement {
+      max-width: 1100px; margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .statement-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem; align-items: start;
+    }
+
+    .statement-label {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted2); padding-top: 0.4rem;
+    }
+
+    .statement-body p {
+      font-family: var(--font-head);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .statement-body p:last-child { margin-bottom: 0; }
+
+    .statement-body strong {
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* ── PILLARS ── */
+    .pillars {
+      background: var(--surface);
+      padding: 6rem 4rem;
+    }
+
+    .pillars-inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+
+    .pillars-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 3.5rem;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+
+    .pillars-header h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; letter-spacing: -0.025em;
+    }
+
+    .pillars-header p {
+      font-size: 0.95rem; color: var(--muted);
+      max-width: 380px; line-height: 1.65;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .pillar-card {
+      background: var(--surface2);
+      border: 0.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+
+    .pillar-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 20%, var(--teal-glow) 0%, transparent 65%);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .pillar-card:hover::before { opacity: 1; }
+
+    .pillar-num {
+      font-family: var(--font-head);
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--teal);
+      margin-bottom: 1.2rem;
+      position: relative; z-index: 1;
+    }
+
+    .pillar-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: -0.01em; margin-bottom: 0.6rem;
+      position: relative; z-index: 1;
+    }
+
+    .pillar-text {
+      font-size: 0.88rem; color: var(--muted);
+      line-height: 1.7;
+      position: relative; z-index: 1;
+    }
+
+    /* ── WHO WE SERVE ── */
+    .who-section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .who-label {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 2.5rem;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      border: 0.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .who-item {
+      padding: 2rem 1.5rem;
+      background: var(--surface2);
+      border-right: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      transition: background 0.25s;
+    }
+    .who-item:hover { background: var(--surface); }
+
+    .who-icon {
+      font-size: 1.5rem; margin-bottom: 0.8rem;
+    }
+
+    .who-title {
+      font-family: var(--font-head);
+      font-size: 0.95rem; font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .who-desc {
+      font-size: 0.82rem; color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── MANIFESTO QUOTE ── */
+    .manifesto {
+      background: var(--surface);
+      padding: 7rem 4rem;
+    }
+
+    .manifesto-inner {
+      max-width: 900px; margin: 0 auto; text-align: center;
+    }
+
+    .manifesto blockquote {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .manifesto blockquote em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .manifesto-sub {
+      font-size: 1rem; color: var(--muted);
+      max-width: 560px; margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      padding: 0.85rem 2.2rem;
+      background: var(--teal); color: var(--bg);
+      border: none; border-radius: 8px;
+      font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── COMMITMENTS ── */
+    .commitments {
+      max-width: 1100px; margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .commit-label {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1rem;
+    }
+
+    .commit-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; letter-spacing: -0.025em;
+      margin-bottom: 3.5rem; max-width: 500px;
+    }
+
+    .commit-list {
+      display: flex; flex-direction: column; gap: 0;
+    }
+
+    .commit-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      padding: 2rem 0;
+      border-top: 0.5px solid var(--border);
+      align-items: start;
+      transition: padding-left 0.2s;
+    }
+    .commit-item:hover { padding-left: 0.5rem; }
+    .commit-item:last-child { border-bottom: 0.5px solid var(--border); }
+
+    .commit-num-title {
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+
+    .commit-num {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; color: var(--teal);
+    }
+
+    .commit-name {
+      font-family: var(--font-head);
+      font-size: 1rem; font-weight: 600;
+    }
+
+    .commit-desc {
+      font-size: 0.95rem; color: var(--muted);
+      line-height: 1.75; padding-top: 0.15rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 1.05rem; color: var(--text); text-decoration: none;
+    }
+
+    .footer-copy { font-size: 0.8rem; color: var(--muted2); }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .mission-hero, .core-statement, .who-section,
+      .commitments, .pillars, .manifesto { padding-left: 1.5rem; padding-right: 1.5rem; }
+      nav { padding: 1rem 1.2rem; }
+      .statement-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .commit-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .pillars-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><span class="dot"></span> Sojaa.ai</a>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to home
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mission-hero">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to home
+    </a>
+    <div class="hero-label">Our mission</div>
+    <h1>AI for <em>everyone.</em><br />Not just the few.</h1>
+    <p class="hero-sub">
+      We believe the most powerful technology of our generation should not be available only to corporations and wealthy institutions. Sojaa.ai exists to change that.
+    </p>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- CORE STATEMENT -->
+  <div class="core-statement">
+    <div class="statement-grid reveal">
+      <div class="statement-label">What we believe</div>
+      <div class="statement-body">
+        <p>
+          AI is the most transformative tool humanity has built — and right now, access to it is deeply unequal. The organizations that need it most — <strong>public hospitals, rural schools, underfunded NGOs, small veterinary clinics</strong> — are the ones least likely to have it.
+        </p>
+        <p>
+          Sojaa.ai was created to close that gap. Our mission is simple: <strong>deliver AI to everyone</strong>, regardless of budget, infrastructure, technical capacity, or geography.
+        </p>
+        <p>
+          We build agents that work in the real world — where connectivity is unreliable, resources are limited, users are not developers, and the stakes of getting it wrong are genuinely high.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLARS -->
+  <div class="pillars">
+    <div class="pillars-inner">
+      <div class="pillars-header reveal">
+        <h2>The principles behind<br />everything we build</h2>
+        <p>Six commitments that shape every product decision at Sojaa.ai.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <div class="pillar-num">01 — Accessibility</div>
+          <div class="pillar-title">AI should have no entry fee</div>
+          <p class="pillar-text">We design every agent to be affordable and operable by organizations without dedicated data science teams or enterprise budgets. Price should never be the reason AI stays out of reach.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-num">02 — Simplicity</div>
+          <div class="pillar-title">No technical degree required</div>
+          <p class="pillar-text">Our agents are built for the nurse, the teacher, the vet, the field worker — not the machine learning engineer. If the interface needs a manual, we have failed.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-num">03 — Resilience</div>
+          <div class="pillar-title">Designed for real-world constraints</div>
+          <p class="pillar-text">Low bandwidth. Older devices. Inconsistent power. Offline modes. We build for the conditions that exist, not the ideal lab scenario.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-num">04 — Trust</div>
+          <div class="pillar-title">Explainability is not optional</div>
+          <p class="pillar-text">When an agent makes a recommendation, it must be able to explain why. Black-box AI has no place in healthcare, education, or financial compliance. Every decision comes with a reason.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-num">05 — Privacy</div>
+          <div class="pillar-title">Your data belongs to you</div>
+          <p class="pillar-text">We never use your data to train models without explicit consent. We design with privacy by default, especially in sensitive domains like health, education, and financial monitoring.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-num">06 — Impact</div>
+          <div class="pillar-title">We measure outcomes, not outputs</div>
+          <p class="pillar-text">We are not building for demos. We care about what changes when our agents are deployed — fewer undetected diseases, better-supported teachers, faster fraud response, fairer games.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO WE SERVE -->
+  <section class="who-section">
+    <div class="who-label reveal">Who we serve</div>
+    <div class="who-grid reveal">
+      <div class="who-item">
+        <div class="who-icon">🏥</div>
+        <div class="who-title">Public health systems</div>
+        <p class="who-desc">Ministries, regional health authorities, and epidemiological agencies that protect population health with limited resources.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-icon">🏫</div>
+        <div class="who-title">Public schools</div>
+        <p class="who-desc">Teachers and school leaders in underserved communities who spend more time on paperwork than on students.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-icon">🌱</div>
+        <div class="who-title">NGOs and nonprofits</div>
+        <p class="who-desc">Organizations running community health programs, volunteer networks, and social impact initiatives at scale.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-icon">🐾</div>
+        <div class="who-title">Veterinary clinics</div>
+        <p class="who-desc">Independent and rural practices where one vet handles everything — clinical care, documentation, and administration.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-icon">🏦</div>
+        <div class="who-title">Compliance teams</div>
+        <p class="who-desc">Finance and audit professionals who need to detect anomalies and meet regulatory requirements without adding headcount.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-icon">⚽</div>
+        <div class="who-title">Sports organizations</div>
+        <p class="who-desc">Leagues and federations — from local competitions to professional championships — seeking fairer, more precise officiating.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO QUOTE -->
+  <div class="manifesto">
+    <div class="manifesto-inner reveal">
+      <blockquote>
+        "The question is not whether AI will change the world.<br />
+        The question is <em>who gets to benefit</em> when it does."
+      </blockquote>
+      <p class="manifesto-sub">
+        At Sojaa.ai, our answer is clear: everyone. Every clinic. Every school. Every community health worker. Every referee. AI for the many, not just the few.
+      </p>
+      <a href="index.html#contact" class="btn-primary">
+        Join us in that mission
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- COMMITMENTS -->
+  <section class="commitments">
+    <div class="commit-label reveal">Our commitments</div>
+    <h2 class="commit-title reveal">How we hold ourselves accountable</h2>
+    <div class="commit-list">
+      <div class="commit-item reveal">
+        <div class="commit-num-title">
+          <span class="commit-num">01</span>
+          <span class="commit-name">Radical transparency</span>
+        </div>
+        <p class="commit-desc">We publish how our agents make decisions. We explain what data they use, what they do not use, and where they can be wrong. Our users deserve to understand the tools they depend on.</p>
+      </div>
+      <div class="commit-item reveal">
+        <div class="commit-num-title">
+          <span class="commit-num">02</span>
+          <span class="commit-name">Responsible deployment</span>
+        </div>
+        <p class="commit-desc">We do not ship agents into high-stakes environments without validation. Every deployment goes through a structured pilot phase with real feedback, real users, and honest measurement of impact before scale.</p>
+      </div>
+      <div class="commit-item reveal">
+        <div class="commit-num-title">
+          <span class="commit-num">03</span>
+          <span class="commit-name">Community partnership</span>
+        </div>
+        <p class="commit-desc">We build with the communities we serve, not just for them. Every product roadmap is shaped by feedback from the people who use it daily — in the field, not just in the boardroom.</p>
+      </div>
+      <div class="commit-item reveal">
+        <div class="commit-num-title">
+          <span class="commit-num">04</span>
+          <span class="commit-name">Long-term commitment</span>
+        </div>
+        <p class="commit-desc">We are not building for the demo. We measure success over years, not quarters — tracking whether our agents produce lasting change in health outcomes, educational equity, financial integrity, and community wellbeing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">Sojaa.ai</a>
+      <span class="footer-copy">© 2025 Sojaa.ai — All rights reserved</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 0.07 + 's';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

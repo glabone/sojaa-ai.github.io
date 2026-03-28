@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sexual Health Chatbot — Sojaa.ai</title>
+  <meta name="description" content="A confidential, judgment-free AI chatbot that provides accurate sexual health information, guides users to testing resources, and removes stigma barriers to care — always private, always safe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --bg:#05080f;--surface:#0c1220;--surface2:#111827;
+      --border:rgba(255,255,255,0.07);--border-hover:rgba(56,189,165,0.35);
+      --teal:#38bda5;--teal-dim:rgba(56,189,165,0.12);--teal-glow:rgba(56,189,165,0.22);
+      --cyan:#67e8f9;--text:#f0f4f8;--muted:#7a8ea8;--muted2:#4e6070;
+      --font-head:'Sora',sans-serif;--font-body:'DM Sans',sans-serif;
+    }
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(5,8,15,0.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:0.5px solid var(--border);}
+    .nav-logo{font-family:var(--font-head);font-size:1.35rem;font-weight:700;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+    .nav-logo .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;box-shadow:0 0 10px var(--teal);animation:pulse 2.4s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.55;transform:scale(0.8);}}
+    .nav-back{display:flex;align-items:center;gap:0.4rem;color:var(--muted);text-decoration:none;font-size:0.88rem;transition:color 0.2s;}
+    .nav-back:hover{color:var(--text);}
+    .nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    .hero{padding:8rem 2rem 5rem;max-width:900px;margin:0 auto;animation:fadeUp 0.6s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+    .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--muted);text-decoration:none;font-size:0.85rem;margin-bottom:2rem;transition:color 0.2s;}
+    .back-link:hover{color:var(--teal);}
+    .back-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    .product-icon{width:56px;height:56px;border-radius:14px;background:var(--teal-dim);border:0.5px solid rgba(56,189,165,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;}
+    .product-icon svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+    .product-tag{display:inline-block;padding:0.2rem 0.7rem;border-radius:100px;font-size:0.72rem;font-weight:500;letter-spacing:0.04em;margin-bottom:0.8rem;}
+    .tag-health{background:rgba(56,189,165,0.12);color:#4dd8be;}
+    .tag-agent{background:rgba(103,232,249,0.1);color:#67e8f9;}
+    .tag-ngo{background:rgba(134,239,172,0.1);color:#86efac;}
+    .tag-sec{background:rgba(251,191,36,0.1);color:#fbbf24;}
+    .tag-sports{background:rgba(239,68,68,0.1);color:#f87171;}
+    .tag-edu{background:rgba(167,139,250,0.1);color:#c4b5fd;}
+    .tag-fin{background:rgba(52,211,153,0.1);color:#34d399;}
+    h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1.2rem;}
+    .lead{font-size:1.1rem;color:var(--muted);line-height:1.75;max-width:680px;margin-bottom:3rem;border-bottom:0.5px solid var(--border);padding-bottom:3rem;}
+    .content{max-width:900px;margin:0 auto;padding:0 2rem 6rem;}
+    .body-text p{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:1.4rem;}
+    .body-text p:last-child{margin-bottom:0;}
+    .features-title{font-family:var(--font-head);font-size:1.1rem;font-weight:600;margin:3rem 0 1.2rem;}
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.8rem;}
+    .feature-item{background:var(--surface2);border:0.5px solid var(--border);border-radius:10px;padding:0.9rem 1.1rem;display:flex;align-items:flex-start;gap:0.7rem;font-size:0.88rem;color:var(--muted);}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:0.45rem;}
+    .cta-block{margin-top:4rem;background:var(--surface2);border:0.5px solid var(--border-hover);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+    .cta-block h2{font-family:var(--font-head);font-size:1.3rem;font-weight:600;letter-spacing:-0.015em;}
+    .cta-block p{color:var(--muted);font-size:0.9rem;margin-top:0.3rem;}
+    .btn-primary{padding:0.8rem 2rem;background:var(--teal);color:var(--bg);border:none;border-radius:8px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;cursor:pointer;text-decoration:none;transition:opacity 0.2s,transform 0.15s;display:inline-flex;align-items:center;gap:0.4rem;}
+    .btn-primary:hover{opacity:0.88;transform:translateY(-1px);}
+    footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;}
+    .footer-copy{font-size:0.8rem;color:var(--muted2);}
+    @media(max-width:700px){nav{padding:1rem 1.2rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo"><span class="dot"></span> Sojaa.ai</a>
+    <a href="index.html#products" class="nav-back">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All products
+    </a>
+  </nav>
+
+  <section class="hero">
+    <a href="index.html#products" class="back-link">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to all products
+    </a>
+    <div class="product-icon">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    </div>
+    <span class="product-tag tag-health">Health chatbot</span>
+    <h1>Sexual Health Chatbot</h1>
+    <p class="lead">A confidential, judgment-free AI chatbot that provides accurate sexual health information, guides users to testing resources, and removes stigma barriers to care — always private, always safe.</p>
+  </section>
+
+  <div class="content">
+    <div class="body-text">
+      <p>Stigma remains one of the biggest barriers to sexual health care. Many people avoid seeking information or testing because they fear judgment, lack access to healthcare, or simply do not know where to start. The Sojaa.ai Sexual Health Chatbot is built to close that gap.</p>
+      <p>It provides accurate, evidence-based information on STIs, contraception, consent, and reproductive health — in a confidential, always-available conversational format. Users can ask questions they might be too embarrassed to ask a doctor, get guidance on finding local testing services, and receive reminders for follow-up care.</p>
+      <p>The chatbot is built on clinical guidelines and reviewed by public health professionals. It never stores identifiable data, and it defaults to recommending professional care when symptoms or risk factors require it.</p>
+    </div>
+
+    <div class="features-title">Key capabilities</div>
+    <div class="features-grid">
+      <div class="feature-item"><span class="feature-dot"></span>Anonymous and confidential conversations</div>
+      <div class="feature-item"><span class="feature-dot"></span>Evidence-based health information</div>
+      <div class="feature-item"><span class="feature-dot"></span>Local testing center locator</div>
+      <div class="feature-item"><span class="feature-dot"></span>STI risk assessment guidance</div>
+      <div class="feature-item"><span class="feature-dot"></span>Multilingual support</div>
+      <div class="feature-item"><span class="feature-dot"></span>Referral to telehealth services</div>
+    </div>
+
+    <div class="cta-block">
+      <div>
+        <h2>Interested in Sexual Health Chatbot?</h2>
+        <p>Tell us about your organization and we will find the right fit.</p>
+      </div>
+      <a href="index.html#contact" class="btn-primary">
+        Get in touch
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-copy">© 2025 Sojaa.ai — All rights reserved</span>
+  </footer>
+</body>
+</html>
