@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orlando em Família — Roteiro 27 Mai – 16 Jun 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #F5A623;
+    --coral: #E8533C;
+    --ocean: #1A7FA8;
+    --teal: #0D9488;
+    --sky: #E0F4FC;
+    --sand: #FEF3E2;
+    --park-color: #4F46E5;
+    --beach-color: #0D9488;
+    --rest-color: #D97706;
+    --special-color: #DC2626;
+    --dark: #1A1A2E;
+    --mid: #2D3561;
+    --text: #2D2D2D;
+    --muted: #6B7280;
+    --light: #F9FAFB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 40%, #0F3460 70%, #1A7FA8 100%);
+    color: white;
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-palms {
+    font-size: 3rem;
+    margin-bottom: 8px;
+    animation: sway 3s ease-in-out infinite;
+  }
+  @keyframes sway { 0%,100%{transform:rotate(-2deg)} 50%{transform:rotate(2deg)} }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--sun); }
+  .hero-sub {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+  .hero-chips {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    margin-bottom: 28px;
+  }
+  .chip {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+  }
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+    margin-top: 24px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 120px;
+  }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--sun); }
+  .stat-label { font-size: 0.75rem; opacity: 0.8; margin-top: 2px; }
+
+  /* ── BUDGET OVERVIEW ── */
+  .budget-section {
+    background: var(--dark);
+    color: white;
+    padding: 36px 24px;
+  }
+  .budget-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--sun);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .budget-item {
+    background: rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 18px;
+    border-left: 4px solid var(--sun);
+  }
+  .budget-item .cat { font-size: 0.75rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+  .budget-item .amount { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sun); font-weight: 700; }
+  .budget-item .desc { font-size: 0.8rem; opacity: 0.7; margin-top: 4px; }
+  .budget-total {
+    text-align: center;
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.4);
+    border-radius: 14px;
+    max-width: 900px;
+    margin: 20px auto 0;
+  }
+  .budget-total p { font-size: 1rem; }
+  .budget-total strong { color: var(--sun); font-size: 1.2rem; }
+
+  /* ── ALERT BANNER ── */
+  .alert-banner {
+    background: linear-gradient(90deg, #7C3AED, #DC2626);
+    color: white;
+    padding: 14px 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .alert-banner strong { font-weight: 700; }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    padding: 20px 24px;
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+    justify-content: center;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 500; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+  /* ── WEEK TABS ── */
+  .week-tabs {
+    display: flex; gap: 0;
+    padding: 0 24px;
+    background: white;
+    border-bottom: 2px solid #E5E7EB;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .week-tab {
+    padding: 14px 22px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .week-tab.active { color: var(--ocean); border-bottom-color: var(--ocean); }
+  .week-tab:hover { color: var(--ocean); }
+
+  /* ── WEEK PANELS ── */
+  .week-panel { display: none; padding: 28px 16px; max-width: 960px; margin: 0 auto; }
+  .week-panel.active { display: block; }
+
+  /* ── DAY CARD ── */
+  .day-card {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #F0F0F0;
+  }
+  .day-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.10); }
+
+  .day-header {
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+  }
+  .day-badge {
+    min-width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+  .day-badge .day-num { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; line-height: 1; }
+
+  .type-park  .day-badge { background: #EEF2FF; color: var(--park-color); }
+  .type-beach .day-badge { background: #ECFDF5; color: var(--beach-color); }
+  .type-rest  .day-badge { background: #FFFBEB; color: var(--rest-color); }
+  .type-arrive .day-badge { background: #FEF2F2; color: var(--coral); }
+  .type-depart .day-badge { background: #F0FDF4; color: #16A34A; }
+
+  .day-header-info { flex: 1; }
+  .day-date { font-size: 0.75rem; color: var(--muted); font-weight: 500; }
+  .day-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
+
+  .type-park  .day-title { color: var(--park-color); }
+  .type-beach .day-title { color: var(--beach-color); }
+  .type-rest  .day-title { color: var(--rest-color); }
+  .type-arrive .day-title { color: var(--coral); }
+  .type-depart .day-title { color: #16A34A; }
+
+  .day-emoji { font-size: 1.6rem; }
+  .day-cost { font-size: 0.78rem; font-weight: 600; color: white; padding: 4px 10px; border-radius: 20px; }
+  .cost-free { background: #16A34A; }
+  .cost-low { background: #0D9488; }
+  .cost-mid { background: #D97706; }
+  .cost-high { background: #DC2626; }
+
+  .day-body { padding: 0 22px 20px; display: none; }
+  .day-body.open { display: block; }
+
+  .divider { height: 1px; background: #F0F0F0; margin: 0 22px 16px; }
+
+  /* ── SCHEDULE BLOCKS ── */
+  .schedule { list-style: none; }
+  .schedule li {
+    display: flex; gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #F0F0F0;
+    align-items: flex-start;
+    font-size: 0.88rem;
+  }
+  .schedule li:last-child { border-bottom: none; }
+  .time-tag {
+    font-weight: 700;
+    color: var(--ocean);
+    min-width: 72px;
+    font-size: 0.8rem;
+    padding-top: 2px;
+  }
+
+  /* ── TIPS BOXES ── */
+  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 600px) { .tips-grid { grid-template-columns: 1fr; } }
+
+  .tip-box {
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 0.83rem;
+  }
+  .tip-box .tip-title { font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .tip-baby { background: #FDF2F8; border-left: 4px solid #EC4899; }
+  .tip-baby .tip-title { color: #BE185D; }
+  .tip-budget { background: #ECFDF5; border-left: 4px solid #10B981; }
+  .tip-budget .tip-title { color: #065F46; }
+  .tip-park { background: #EEF2FF; border-left: 4px solid #6366F1; }
+  .tip-park .tip-title { color: #3730A3; }
+  .tip-heat { background: #FEF3C7; border-left: 4px solid #F59E0B; }
+  .tip-heat .tip-title { color: #92400E; }
+
+  /* ── RESTAURANT SECTION ── */
+  .restaurant-section { margin-top: 14px; }
+  .restaurant-section h4 { font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .restaurant-cards { display: flex; flex-wrap: wrap; gap: 8px; }
+  .restaurant-card {
+    background: var(--sand);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    border: 1px solid #FDE68A;
+    flex: 1; min-width: 140px;
+  }
+  .restaurant-card .r-name { font-weight: 700; color: var(--coral); }
+  .restaurant-card .r-price { color: #16A34A; font-weight: 600; font-size: 0.75rem; }
+  .restaurant-card .r-desc { color: var(--muted); margin-top: 2px; }
+
+  /* ── GLOBAL TIPS ── */
+  .global-tips {
+    background: white;
+    padding: 40px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .global-tips h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--dark);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .tips-big-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .tip-big-card {
+    border-radius: 18px;
+    padding: 22px;
+    font-size: 0.87rem;
+    line-height: 1.6;
+  }
+  .tip-big-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .tip-big-card ul { padding-left: 16px; }
+  .tip-big-card li { margin-bottom: 6px; }
+  .card-blue { background: var(--sky); border: 1px solid #BAE6FD; }
+  .card-blue h3 { color: var(--ocean); }
+  .card-pink { background: #FDF2F8; border: 1px solid #FBCFE8; }
+  .card-pink h3 { color: #BE185D; }
+  .card-green { background: #ECFDF5; border: 1px solid #A7F3D0; }
+  .card-green h3 { color: #065F46; }
+  .card-yellow { background: #FFFBEB; border: 1px solid #FDE68A; }
+  .card-yellow h3 { color: #92400E; }
+  .card-purple { background: #EEF2FF; border: 1px solid #C7D2FE; }
+  .card-purple h3 { color: #3730A3; }
+  .card-coral { background: #FEF2F2; border: 1px solid #FECACA; }
+  .card-coral h3 { color: #991B1B; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 28px 16px;
+    font-size: 0.8rem;
+    margin-top: 40px;
+  }
+  footer strong { color: var(--sun); }
+
+  /* ── OPEN ALL button ── */
+  .controls {
+    display: flex; gap: 10px; justify-content: center;
+    padding: 16px 24px 0;
+  }
+  .ctrl-btn {
+    background: var(--ocean);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+  .ctrl-btn:hover { background: var(--mid); }
+  .ctrl-btn.outline { background: transparent; color: var(--ocean); border: 2px solid var(--ocean); }
+  .ctrl-btn.outline:hover { background: var(--sky); }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero { padding: 40px 16px 60px; }
+    .day-header { padding: 14px 16px; }
+    .day-body { padding: 0 16px 16px; }
+    .divider { margin: 0 16px 12px; }
+    .tips-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-palms">🌴☀️🌴</div>
+  <h1>Orlando em <span>Família</span></h1>
+  <p class="hero-sub">Roteiro completo · 27 de Maio – 16 de Junho de 2026 · 21 dias</p>
+  <div class="hero-chips">
+    <span class="chip">👨‍👩‍👧‍👦 2 adultos + 3 crianças</span>
+    <span class="chip">👶 Bebê de 6 meses</span>
+    <span class="chip">🇧🇷🇨🇦 Brasileiros/Canadenses</span>
+    <span class="chip">💵 Budget econômico</span>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-box"><div class="stat-num">21</div><div class="stat-label">Dias de aventura</div></div>
+    <div class="stat-box"><div class="stat-num">6</div><div class="stat-label">Dias em parques</div></div>
+    <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Dias de praia</div></div>
+    <div class="stat-box"><div class="stat-num">~$5k</div><div class="stat-label">Budget total</div></div>
+  </div>
+</section>
+
+<!-- ALERT -->
+<div class="alert-banner">
+  🚨 <strong>ATENÇÃO:</strong> O Epic Universe (novo parque da Universal) abre em 22 de maio de 2026 — apenas 5 dias antes da sua chegada! Será o parque mais concorrido do mundo. Chegue às 7h para abertura às 9h.
+</div>
+
+<!-- BUDGET -->
+<section class="budget-section">
+  <h2>💰 Estimativa de Budget (US$)</h2>
+  <div class="budget-grid">
+    <div class="budget-item">
+      <div class="cat">Ingressos — Parques</div>
+      <div class="amount">~$2.850</div>
+      <div class="desc">Disney 3 dias + Universal 3-park 2 dias + SeaWorld</div>
+    </div>
+    <div class="budget-item">
+      <div class="cat">Alimentação</div>
+      <div class="amount">~$1.100</div>
+      <div class="desc">Mix de cozinhar, fast food e restaurantes econômicos</div>
+    </div>
+    <div class="budget-item">
+      <div class="cat">Carro Alugado</div>
+      <div class="amount">~$420</div>
+      <div class="desc">21 dias + seguro básico</div>
+    </div>
+    <div class="budget-item">
+      <div class="cat">Atividades Extras</div>
+      <div class="amount">~$350</div>
+      <div class="desc">Kennedy Space Center, Gatorland, etc.</div>
+    </div>
+    <div class="budget-item">
+      <div class="cat">Misc / Souvenirs</div>
+      <div class="amount">~$280</div>
+      <div class="desc">Lembranças, gastos imprevistos</div>
+    </div>
+  </div>
+  <div class="budget-total">
+    <p>Total estimado: <strong>~$5.000 USD</strong> · Hospedagem já inclusa pelo cliente</p>
+    <p style="font-size:0.8rem;opacity:0.8;margin-top:6px;">💡 Dica: Compre ingressos Disney no <strong>Undercover Tourist</strong> e SeaWorld no <strong>Groupon</strong> para 10–40% de desconto!</p>
+  </div>
+</section>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#4F46E5"></div> Dia de parque</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#0D9488"></div> Dia de praia</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#D97706"></div> Descanso / Livre</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#E8533C"></div> Chegada/Partida</div>
+</div>
+
+<!-- TABS -->
+<div class="week-tabs">
+  <button class="week-tab active" onclick="showWeek(0)">Semana 1<br><small>27 Mai–2 Jun</small></button>
+  <button class="week-tab" onclick="showWeek(1)">Semana 2<br><small>3–9 Jun</small></button>
+  <button class="week-tab" onclick="showWeek(2)">Semana 3<br><small>10–16 Jun</small></button>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="ctrl-btn" onclick="openAll()">📂 Abrir Todos</button>
+  <button class="ctrl-btn outline" onclick="closeAll()">Fechar Todos</button>
+</div>
+
+<!-- ══════════════════════════════════════════
+  SEMANA 1
+══════════════════════════════════════════ -->
+<div class="week-panel active" id="week-0">
+
+  <!-- DIA 1 -->
+  <div class="day-card type-arrive" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">27</div><div>Mai</div></div>
+      <div class="day-emoji">✈️</div>
+      <div class="day-header-info">
+        <div class="day-date">Terça-feira · Dia 1 de 21</div>
+        <div class="day-title">Chegada & Instalação</div>
+      </div>
+      <span class="day-cost cost-low">~$50</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Chegada</span> Pegar o carro alugado no aeroporto (MCO). Recomendado: Alamo ou Enterprise — chegue com reserva online já feita.</li>
+        <li><span class="time-tag">Tarde</span> Check-in na hospedagem. Não planeje nada para hoje — viagem com bebê é cansativa!</li>
+        <li><span class="time-tag">15h–17h</span> 🛒 Compras no <strong>Walmart Supercenter</strong> ou <strong>Publix</strong>: água, snacks, frutas, fraldas, lenços, protetor solar SPF 50+, protetor de tendas para praia, mochila de hidratação.</li>
+        <li><span class="time-tag">18h</span> Jantar leve. <strong>Chick-fil-A</strong> ou supermercado (subs da Publix são ótimos e baratos).</li>
+        <li><span class="time-tag">Noite</span> Dormir cedo! Os parques exigem energia. Chegue no Magic Kingdom amanhã às 8h.</li>
+      </ul>
+      <div class="tips-grid" style="margin-top:16px">
+        <div class="tip-box tip-baby">
+          <div class="tip-title">👶 Dica Bebê</div>
+          Compre fraldas, lenços e fórmula aqui — preços nos EUA são bem menores que dentro dos parques. Leve o carrinho de bebê (stroller) — é essencial em TODOS os parques.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Dica Budget</div>
+          Compre comida para café da manhã em casa toda semana. Ovos, frutas, iogurte e cereal economizam facilmente $30–40/dia para a família.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 2 -->
+  <div class="day-card type-park" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">28</div><div>Mai</div></div>
+      <div class="day-emoji">🏰</div>
+      <div class="day-header-info">
+        <div class="day-date">Quarta-feira · Dia 2 · PARQUE</div>
+        <div class="day-title">Magic Kingdom — Walt Disney World</div>
+      </div>
+      <span class="day-cost cost-high">~$680</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">7h30</span> Café em casa. Carregue a mochila com snacks, água, protetor solar, roupa extra para o bebê e lanche para as crianças.</li>
+        <li><span class="time-tag">8h30</span> Chegue ao parque (abertura 9h). Rope drop é ESSENCIAL em junho (alta temporada).</li>
+        <li><span class="time-tag">9h–12h</span> 🎠 <strong>Fantasyland:</strong> 7 Dwarfs Mine Train (fila menor cedo!), Peter Pan's Flight, It's a Small World, Dumbo — perfeito para o de 4 anos.</li>
+        <li><span class="time-tag">12h–13h</span> 🍔 Almoço: <strong>Pecos Bill Tall Tale Inn</strong> — quick service, ~$14/pessoa. Toppings bar incluídos!</li>
+        <li><span class="time-tag">13h–14h30</span> 👶 Hora do soninho do bebê → Vá ao <strong>Baby Care Center</strong> (ao lado da Crystal Palace) — fraldas, sala de amamentação, microondas, ar condicionado.</li>
+        <li><span class="time-tag">14h30–17h</span> 🌟 <strong>Tomorrowland & Adventureland:</strong> Pirates of the Caribbean, Haunted Mansion, Space Mountain (adultos), Buzz Lightyear (4 e 10 anos).</li>
+        <li><span class="time-tag">17h–18h</span> Descanse no hotel. Evite o calor da tarde (pico às 15–17h, pode passar de 38°C).</li>
+        <li><span class="time-tag">19h30</span> (Opcional) Volte para os <strong>fogos de artifício Happily Ever After</strong> — 21h. Vale demais para as crianças.</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-park">
+          <div class="tip-title">🎢 Dica Magic Kingdom</div>
+          Compre ingressos no <strong>Undercover Tourist</strong> (~10% mais barato). Bebê (0–2 anos) entra GRÁTIS. Baixe o app My Disney Experience antes.
+        </div>
+        <div class="tip-box tip-baby">
+          <div class="tip-title">👶 Dica Bebê no MK</div>
+          Baby Care Centers são ar condicionados e gratuitos. Há sala de amamentação privativa. Stroller parking em frente a cada atração.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Economize $$$</div>
+          Leve garrafa de água reutilizável — a Disney oferece água grátis em qualquer quick service. Snacks de casa economizam $40–60/dia.
+        </div>
+        <div class="tip-box tip-heat">
+          <div class="tip-title">🌡️ Calor de Junho</div>
+          Junho = 35–38°C + umidade alta. Leve leques de névoa (misting fan), roupas frescas e chapéu. Tempestades à tarde são normais (15h–17h).
+        </div>
+      </div>
+      <div class="restaurant-section">
+        <h4>🍽️ Opções de Refeição no/perto do parque</h4>
+        <div class="restaurant-cards">
+          <div class="restaurant-card"><div class="r-name">Pecos Bill (QS)</div><div class="r-price">~$12–15/pessoa</div><div class="r-desc">Nachos, burgers. Toppings bar grátis!</div></div>
+          <div class="restaurant-card"><div class="r-name">Columbia Harbour House</div><div class="r-price">~$12–14/pessoa</div><div class="r-desc">Peixe frito e sanduíches. Menos fila.</div></div>
+          <div class="restaurant-card"><div class="r-name">Casey's Corner</div><div class="r-price">~$8–12/pessoa</div><div class="r-desc">Hot dogs clássicos. Ótimo para as crianças.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 3 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">29</div><div>Mai</div></div>
+      <div class="day-emoji">🛍️</div>
+      <div class="day-header-info">
+        <div class="day-date">Quinta-feira · Dia 3 · DESCANSO</div>
+        <div class="day-title">Descanso + Disney Springs (grátis!)</div>
+      </div>
+      <span class="day-cost cost-free">Grátis</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Manhã</span> 😴 Durma até tarde. Café em casa. Os parques são exaustivos — descanso é estratégia, não preguiça.</li>
+        <li><span class="time-tag">14h</span> 🛍️ <strong>Disney Springs</strong> — entrada 100% gratuita, sem ingresso. Shopping, restaurantes, entretenimento ao vivo.</li>
+        <li><span class="time-tag">14h–17h</span> Loja da LEGO (maior do mundo!), Disney Store, World of Disney. Muitos brinquedos para ver sem comprar.</li>
+        <li><span class="time-tag">17h–18h30</span> 🍽️ Jantar em Disney Springs (boa relação custo-benefício comparado ao parque).</li>
+        <li><span class="time-tag">19h</span> Retorno e sono cedo — amanhã é EPCOT!</li>
+      </ul>
+      <div class="restaurant-section">
+        <h4>🍽️ Restaurantes econômicos em Disney Springs</h4>
+        <div class="restaurant-cards">
+          <div class="restaurant-card"><div class="r-name">Earl of Sandwich</div><div class="r-price">~$8–10/pessoa</div><div class="r-desc">Sanduíches quentes deliciosos. Melhor custo-benefício de Disney Springs.</div></div>
+          <div class="restaurant-card"><div class="r-name">Blaze Pizza</div><div class="r-price">~$10–12/pessoa</div><div class="r-desc">Pizza artesanal rápida. As crianças amam!</div></div>
+          <div class="restaurant-card"><div class="r-name">D-Luxe Burger</div><div class="r-price">~$13–16/pessoa</div><div class="r-desc">Hambúrgueres premium. Opção mais cara mas vale.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 4 -->
+  <div class="day-card type-park" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">30</div><div>Mai</div></div>
+      <div class="day-emoji">🌍</div>
+      <div class="day-header-info">
+        <div class="day-date">Sexta-feira · Dia 4 · PARQUE</div>
+        <div class="day-title">EPCOT — Walt Disney World</div>
+      </div>
+      <span class="day-cost cost-high">Ingresso incluso no 3-day</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">8h30</span> Chegue cedo. Primeiro destino: <strong>World Discovery</strong> — Test Track (10 anos vai amar).</li>
+        <li><span class="time-tag">9h–11h</span> 🌊 <strong>World Nature:</strong> Frozen Ever After (NO de 4 anos irá ADORAR — fila curta cedo), The Seas com Nemo.</li>
+        <li><span class="time-tag">11h–12h</span> 🇫🇷 <strong>Remy's Ratatouille Adventure</strong> (novo pavilhão francês — imperdível para toda família).</li>
+        <li><span class="time-tag">12h–13h</span> Almoço no <strong>World Showcase</strong> — tente o pavilhão do México (tacos e burritos, ~$13/pessoa).</li>
+        <li><span class="time-tag">13h–15h</span> 👶 Soneca do bebê + passeio tranquilo pelo World Showcase. Visite Japão, Canadá, Itália.</li>
+        <li><span class="time-tag">15h–18h</span> Explore mais pavilhões. Festival possível: EPCOT frequentemente tem festivais de comida em junho!</li>
+        <li><span class="time-tag">21h</span> 🎆 <strong>EPCOT Luminous</strong> — show de fogos e lasers no lago. Gratuito com ingresso. Imperdível!</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-park">
+          <div class="tip-title">🌍 Dica EPCOT</div>
+          O EPCOT tem o maior Baby Care Center de todos os parques Disney. World Showcase é ótimo para caminhar com stroller — espaçoso e bem arejado.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Coma no Mundo</div>
+          Kiosques no World Showcase têm pratos por $5–8. Melhor custo-benefício gastronômico de toda a Disney. Experimente: crepe francês, churro espanhol, ramen japonês.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 5 -->
+  <div class="day-card type-beach" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">31</div><div>Mai</div></div>
+      <div class="day-emoji">🏖️</div>
+      <div class="day-header-info">
+        <div class="day-date">Sábado · Dia 5 · PRAIA</div>
+        <div class="day-title">Cocoa Beach — 1h de Orlando</div>
+      </div>
+      <span class="day-cost cost-low">~$60–80</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">7h30</span> Café em casa. Prepare bolsa de praia: protetor solar SPF 50+ para bebê, tenda de proteção UV, fraldas extras, troca de roupa para todos.</li>
+        <li><span class="time-tag">8h30</span> Saída para Cocoa Beach (I-4 East → 528 East). ~1 hora de carro.</li>
+        <li><span class="time-tag">9h30</span> Chegue cedo — estacionamento gratuito fica cheio depois das 11h. Área boa: <strong>Lori Wilson Park</strong> (banheiros, chuveiros, área sombreada, grátis).</li>
+        <li><span class="time-tag">9h30–12h30</span> 🌊 Praia! Bebê fica na tenda (NUNCA exposição solar direta). De 4 anos adora brincar na areia. De 10 anos pode entrar no mar com supervisão — ondas suaves no lado leste.</li>
+        <li><span class="time-tag">12h30</span> 🦑 <strong>Ron Jon Surf Shop</strong> — maior loja de surf do mundo. Entrada grátis! Ótimo para fotos e ver os produtos.</li>
+        <li><span class="time-tag">13h30</span> 🍔 Almoço: <strong>Coconuts on the Beach</strong> — vista para o mar, ~$15–20/pessoa. Ou compre na <strong>Publix</strong> e faça piquenique na praia.</li>
+        <li><span class="time-tag">14h30</span> Volte antes das tempestades da tarde (15h–17h são comuns em junho na Flórida).</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-baby">
+          <div class="tip-title">👶 Bebê na Praia</div>
+          Leve tenda UV (proteção UPF 50+). Nunca exponha bebê de 6 meses ao sol direto. Use roupinha de manga longa para UV. Crème solar apenas em partes expostas (consulte pediatra).
+        </div>
+        <div class="tip-box tip-heat">
+          <div class="tip-title">☀️ Junho na Praia</div>
+          Praia da manhã = melhor época (9h–13h). Após 14h: risco de trovoadas. Água do Atlântico em junho: ~26–28°C — perfeita!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 6 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">1</div><div>Jun</div></div>
+      <div class="day-emoji">🚀</div>
+      <div class="day-header-info">
+        <div class="day-date">Domingo · Dia 6 · PASSEIO</div>
+        <div class="day-title">Kennedy Space Center</div>
+      </div>
+      <span class="day-cost cost-mid">~$220</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">8h30</span> Saída — Kennedy Space Center fica em Merritt Island, ao lado de Cocoa Beach (~1h de Orlando).</li>
+        <li><span class="time-tag">9h30</span> Abertura. Compre ingressos online antecipadamente: Adultos ~$57, Crianças 3–11: ~$47, Bebê: <strong>GRÁTIS</strong>.</li>
+        <li><span class="time-tag">10h–12h</span> 🚀 <strong>Shuttle Launch Experience</strong> — simulador de lançamento. Incrível para o de 10 anos! Rocket Garden — fotos inesquecíveis.</li>
+        <li><span class="time-tag">12h–13h</span> Almoço no <strong>Orbit Café</strong> dentro do parque (~$12–15/pessoa) ou lanche rápido no Astronaut Café.</li>
+        <li><span class="time-tag">13h–16h</span> 🛸 Heroes & Legends, Apollo/Saturn V Center (o maior foguete já construído — impressionante!). Para o de 4 anos: Children's Play Dome.</li>
+        <li><span class="time-tag">16h30</span> Retorno para Orlando. Possível parada em Cocoa Beach para sorvete 🍦</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-park">
+          <div class="tip-title">🚀 Dica Kennedy</div>
+          Combinar Kennedy + Cocoa Beach no mesmo dia é possível mas cansativo com bebê. Deixe para dias separados se puder, mas se quiser otimizar: praia sábado, Kennedy domingo funciona bem.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Economize</div>
+          Compre ingresso no site oficial do KSC — às vezes há descontos "military family" ou "Florida resident" que canadenses/brasileiros não usam, mas promoções sazonais existem.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 7 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">2</div><div>Jun</div></div>
+      <div class="day-emoji">🐊</div>
+      <div class="day-header-info">
+        <div class="day-date">Segunda-feira · Dia 7 · DESCANSO</div>
+        <div class="day-title">Descanso & Gatorland (opcional)</div>
+      </div>
+      <span class="day-cost cost-low">~$0–120</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Manhã</span> 😴 Dia livre. Descanso total recomendado — são 6 dias seguidos de atividade intensa!</li>
+        <li><span class="time-tag">Opção A</span> 🐊 <strong>Gatorland</strong> — parque de crocodilos/jacarés. Adultos ~$30, Crianças ~$20 (com cupom Groupon!). O de 4 e 10 anos vão ADORAR. Zipline disponível.</li>
+        <li><span class="time-tag">Opção B</span> 🏊 Piscina na hospedagem + almoço em casa.</li>
+        <li><span class="time-tag">Opção C</span> 🌳 <strong>Lake Eola Park</strong> — parque gratuito no centro de Orlando. Patos, pedalinhos, parquinho para as crianças.</li>
+        <li><span class="time-tag">Jantar</span> 🍽️ <strong>Cracker Barrel</strong> — comida americana caseira, ótimo custo-benefício para família, ~$12/pessoa. As crianças adoram os joguinhos na loja.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /week-0 -->
+
+<!-- ══════════════════════════════════════════
+  SEMANA 2
+══════════════════════════════════════════ -->
+<div class="week-panel" id="week-1">
+
+  <!-- DIA 8 -->
+  <div class="day-card type-park" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">3</div><div>Jun</div></div>
+      <div class="day-emoji">🎬</div>
+      <div class="day-header-info">
+        <div class="day-date">Terça-feira · Dia 8 · PARQUE</div>
+        <div class="day-title">Universal Studios Florida + Islands of Adventure</div>
+      </div>
+      <span class="day-cost cost-high">Ingresso 3-park</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">7h30</span> Café em casa. Compre ingresso com antecedência: <strong>3-Park 2-Day ticket</strong> (USF + IOA + Epic Universe). Adulto ~$260–280, Criança 3+ ~$250. Bebê GRÁTIS.</li>
+        <li><span class="time-tag">8h30</span> Chegue ao Universal. O estacionamento custa ~$30/dia (parking garagem). Anote o andar!</li>
+        <li><span class="time-tag">9h–11h</span> 🧙 <strong>Diagon Alley (Harry Potter)</strong> — entre cedo! Vault of Destinies é a nova atração, Escape from Gringotts é imperdível. O de 10 anos vai enlouquecer.</li>
+        <li><span class="time-tag">9h–11h</span> Para o de 4 anos: Despicable Me Minion Mayhem, Race Through New York with Jimmy Fallon.</li>
+        <li><span class="time-tag">11h–12h</span> Pegue o <strong>Hogwarts Express</strong> para Islands of Adventure — bilhete incluso! A viagem em si é uma atração.</li>
+        <li><span class="time-tag">12h–13h</span> 🍖 Almoço: <strong>The Leaky Cauldron</strong> em Diagon Alley — butterbeer, shepherd's pie. ~$15/pessoa. Experiência temática inesquecível.</li>
+        <li><span class="time-tag">13h–16h</span> 🏰 <strong>Hogsmeade (IOA)</strong> — Hagrid's Magical Creatures (a melhor fila de todo Universal!), Flight of the Hippogriff (ótima para crianças).</li>
+        <li><span class="time-tag">16h–17h</span> 🐟 <strong>Seuss Landing (IOA)</strong> — PERFEITO para o de 4 anos. The Cat in the Hat, One Fish Two Fish Red Fish Blue Fish.</li>
+        <li><span class="time-tag">17h</span> Retorno ao hotel. Descanso antes do Epic Universe amanhã.</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-park">
+          <div class="tip-title">🎢 Alturas Mínimas</div>
+          Muitas atrações exigem altura mínima. De 4 anos (tipicamente ~100cm): Seuss Landing, Minion Mayhem, Cat in the Hat ✅. Forbidden Journey, Hulk ❌. Verifique no site.
+        </div>
+        <div class="tip-box tip-baby">
+          <div class="tip-title">👶 Baby Swap</div>
+          Universal oferece "baby swap" — um adulto entra na atração, o outro fica com bebê, depois trocam sem pegar fila novamente. Imprescindível!
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Butterbeer DIY</div>
+          Butterbeer dentro do parque ~$8. Bebida deliciosa mas cara. Compre apenas uma para experimentar e divida se possível!
+        </div>
+        <div class="tip-box tip-heat">
+          <div class="tip-title">🌡️ Atrações com Água</div>
+          Dudley Do-Right's e Jurassic Park River Adventure molham MUITO. Leve roupas extras ou compre uma capa de chuva barata no parque.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 9 -->
+  <div class="day-card type-park" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">4</div><div>Jun</div></div>
+      <div class="day-emoji">🌟</div>
+      <div class="day-header-info">
+        <div class="day-date">Quarta-feira · Dia 9 · PARQUE NOVO!</div>
+        <div class="day-title">Epic Universe — O Parque Mais Novo do Mundo!</div>
+      </div>
+      <span class="day-cost cost-high">Ingresso 3-park (2º dia)</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">⚠️ ALERTA</span> <strong>CHEGUE ÀS 7H PARA ABERTURA ÀS 9H.</strong> O Epic Universe abre em 22/mai/2026 — seu grupo chega apenas 13 dias depois. Espere as maiores filas da história da Universal. Virtual Queues e Lightning Lane serão essenciais.</li>
+        <li><span class="time-tag">7h</span> Chegue ao estacionamento. Fila já começa cedo. Leve café e snacks.</li>
+        <li><span class="time-tag">9h SHARP</span> Na abertura, corra (com o stroller) para a atração que mais importa. Sugestão: <strong>Super Nintendo World</strong> — será a mais concorrida por muito tempo.</li>
+        <li><span class="time-tag">9h–11h</span> 🎮 <strong>Super Nintendo World</strong> — Mario Kart: Bowser's Challenge, Donkey Kong Country. O de 10 anos e 4 anos vão ENLOUQUECER.</li>
+        <li><span class="time-tag">11h–13h</span> 🐉 <strong>How to Train Your Dragon — Isle of Berk</strong> — perfeito para família! Soarin' com dragões, encontros com personagens.</li>
+        <li><span class="time-tag">13h–14h</span> Almoço em <strong>Celestial Park</strong> (hub central) — restaurantes temáticos astronômicos.</li>
+        <li><span class="time-tag">14h–16h</span> 🧙 <strong>Wizarding World — Ministry of Magic</strong> (Paris, era Fantastic Beasts). Visual incrível, Harry Potter moderno.</li>
+        <li><span class="time-tag">16h–17h</span> 🧟 <strong>Universal Monsters</strong> — mais sombrio, melhor para adultos e de 10 anos.</li>
+        <li><span class="time-tag">18h</span> Show de encerramento em Celestial Park — imperdível.</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-park">
+          <div class="tip-title">🌟 Epic Universe — Dica Crucial</div>
+          Baixe o app da Universal antes. Virtual Queue pode ser necessário para Super Nintendo World — entre na fila virtual assim que o parque abrir às 9h (pelo app!). Não dá pra esperar.
+        </div>
+        <div class="tip-box tip-baby">
+          <div class="tip-title">👶 Bebê no Epic Universe</div>
+          Baby Care Center em Celestial Park (hub central). O parque é novo e bem planejado para strollers. Celestial Park tem áreas sombreadas — ótimo base para o bebê descansar.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 10 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">5</div><div>Jun</div></div>
+      <div class="day-emoji">😴</div>
+      <div class="day-header-info">
+        <div class="day-date">Quinta-feira · Dia 10 · DESCANSO</div>
+        <div class="day-title">Recuperação + International Drive</div>
+      </div>
+      <span class="day-cost cost-free">~$20–40</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Manhã</span> 😴 Descanso total em casa. Dois dias consecutivos na Universal são intensos com bebê.</li>
+        <li><span class="time-tag">14h</span> 🎡 <strong>International Drive</strong> — caminhe pela maior rua turística de Orlando. Entrada gratuita (ICON Park de graça para passeio).</li>
+        <li><span class="time-tag">15h</span> <strong>Ripley's Believe It or Not</strong> (~$22/pessoa, crianças menores pagam menos) — curioso e divertido para o de 10 anos. OU simplesmente caminhe.</li>
+        <li><span class="time-tag">17h</span> 🍕 Jantar: <strong>Olive Garden</strong> — perto da I-Drive. Unlimited breadsticks e salada, ~$15/pessoa. Crianças adoram!</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIA 11 -->
+  <div class="day-card type-beach" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">6</div><div>Jun</div></div>
+      <div class="day-emoji">🏝️</div>
+      <div class="day-header-info">
+        <div class="day-date">Sexta-feira · Dia 11 · PRAIA</div>
+        <div class="day-title">Clearwater Beach — A Mais Linda da Flórida</div>
+      </div>
+      <span class="day-cost cost-mid">~$80–100</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">7h</span> Saída cedo! Clearwater Beach fica a ~2h de carro de Orlando (I-4 West → US-19 South). Saia cedo para evitar trânsito e pegar boa sombra na praia.</li>
+        <li><span class="time-tag">9h–13h</span> 🌊 <strong>Clearwater Beach</strong> — eleita várias vezes a melhor praia dos EUA. Areia branca ultra-fina, mar turquesa morno, calmo, perfeito para crianças. Pier 60 tem activities.</li>
+        <li><span class="time-tag">11h</span> 🐬 Opcional: <strong>Passeio de barco com golfinhos</strong> (~$30/adulto, crianças menores grátis). Saem do pier 60. Bebê pode ir!</li>
+        <li><span class="time-tag">13h</span> 🍤 Almoço: <strong>Frenchy's Rockaway Grill</strong> — restaurante icônico de Clearwater, frutos do mar, ~$18–22/pessoa. Reserve mesa com antecedência (cheio em junho).</li>
+        <li><span class="time-tag">14h30</span> Retorno antes das chuvas. Pare no <strong>Publix</strong> no caminho para jantar leve em casa.</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-beach" style="background:#ECFDF5;border-left:4px solid #0D9488">
+          <div class="tip-title" style="color:#065F46">🏖️ Clearwater vs Cocoa</div>
+          Clearwater (costa oeste) = mar mais calmo, cor turquesa, melhor para bebê e crianças pequenas. Cocoa Beach (costa leste) = mais perto, ondas maiores. Para família com bebê, Clearwater é superior.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Estacionamento</div>
+          Estacionamento pago (~$3–5/hora). Chegue cedo e estacione no Pier 60 Parking Garage. Alternativa: lot de graça nas ruas laterais a algumas quadras da praia.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 12 -->
+  <div class="day-card type-park" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">7</div><div>Jun</div></div>
+      <div class="day-emoji">🎥</div>
+      <div class="day-header-info">
+        <div class="day-date">Sábado · Dia 12 · PARQUE</div>
+        <div class="day-title">Hollywood Studios — Walt Disney World</div>
+      </div>
+      <span class="day-cost cost-high">Ingresso 3-day Disney</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">8h30</span> Rope drop. Hollywood Studios é o parque mais concorrido da Disney em junho (Star Wars!).</li>
+        <li><span class="time-tag">9h–11h</span> ⭐ <strong>Star Wars: Galaxy's Edge</strong> — Millennium Falcon: Smugglers Run (10 anos vai ADORAR, 4 anos pode fazer se tiver altura). Rise of the Resistance é a melhor atração da Disney — Virtual Queue necessário.</li>
+        <li><span class="time-tag">11h–12h30</span> 🧸 <strong>Toy Story Land</strong> — PERFEITO para o de 4 anos! Slinky Dog Dash (altura mín. 97cm), Alien Swirling Saucers, Toy Story Mania.</li>
+        <li><span class="time-tag">12h30–13h30</span> Almoço: <strong>Ronto Roasters</strong> (Pork wrap, $11) em Galaxy's Edge. Ou <strong>Backlot Express</strong> (quick service, ~$12).</li>
+        <li><span class="time-tag">13h30–15h</span> 👶 Descanso para bebê no Baby Care Center perto da entrada. Adulto fica com crianças em Toy Story Land.</li>
+        <li><span class="time-tag">15h–17h</span> 🎭 <strong>Indiana Jones Stunt Show</strong> (grátis com ingresso, espetacular!), <strong>Muppet*Vision 3D</strong>.</li>
+        <li><span class="time-tag">21h</span> 🌟 <strong>Fantasmic!</strong> — show noturno épico. Chegue 1h antes para lugar. É o melhor show noturno da Disney.</li>
+      </ul>
+      <div class="restaurant-section">
+        <h4>🍽️ Opções em Hollywood Studios</h4>
+        <div class="restaurant-cards">
+          <div class="restaurant-card"><div class="r-name">Ronto Roasters</div><div class="r-price">~$11–13</div><div class="r-desc">Wrap de porco em Galaxy's Edge. Iconic!</div></div>
+          <div class="restaurant-card"><div class="r-name">Backlot Express</div><div class="r-price">~$11–14</div><div class="r-desc">Quick service clássico. Hambúrgueres e hot dogs.</div></div>
+          <div class="restaurant-card"><div class="r-name">Woody's Lunch Box</div><div class="r-price">~$9–12</div><div class="r-desc">Em Toy Story Land. Toaster pastry, baked mac. As crianças amam!</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 13 -->
+  <div class="day-card type-park" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">8</div><div>Jun</div></div>
+      <div class="day-emoji">🐋</div>
+      <div class="day-header-info">
+        <div class="day-date">Domingo · Dia 13 · PARQUE</div>
+        <div class="day-title">SeaWorld Orlando</div>
+      </div>
+      <span class="day-cost cost-mid">~$260</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Ingresso</span> Compre no <strong>Groupon</strong> ou site oficial com antecedência — pode sair por ~$45–60/pessoa (vs $90 na entrada). Bebê GRÁTIS.</li>
+        <li><span class="time-tag">9h</span> Rope drop. Primeiro: Mako (adultos) ou posição para ver o show da manhã.</li>
+        <li><span class="time-tag">9h–11h</span> 🦒 <strong>Sesame Street Land</strong> — literalmente o melhor área do SeaWorld para crianças de 4 anos! Elmo, Big Bird, Cookie Monster. Shows interativos, atrações para pequenos.</li>
+        <li><span class="time-tag">11h–12h</span> 🐬 <strong>Dolphin Nursery</strong> + <strong>Penguin Trek</strong> — ambos sem restrição de altura, stroller friendly. O bebê vai adorar ver os pinguins!</li>
+        <li><span class="time-tag">12h–13h</span> Almoço: <strong>Sharks Underwater Grill</strong> (~$18–22/pessoa, mesa com vista para o aquário de tubarões — impressionante!). OU quick service mais barato.</li>
+        <li><span class="time-tag">13h–15h</span> 🎢 Mako, Ice Breaker (adultos revezam com baby swap). Orca Encounter show — educacional e emocionante.</li>
+        <li><span class="time-tag">15h–16h</span> 🌊 Antarctica: Empire of the Penguin — totalmente stroller friendly, ar condicionado, perfeito para bebê. Passeio suave da família.</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-baby">
+          <div class="tip-title">👶 SeaWorld é Baby-Friendly!</div>
+          SeaWorld tem áreas muito mais tranquilas que Disney ou Universal. Penguin Trek e aquários são silenciosos e frescos — ótimos para bebê. Nursing rooms disponíveis.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Groupon Alerta!</div>
+          SeaWorld frequentemente aparece no Groupon com até 40% de desconto. Compre com 2–3 semanas de antecedência. Um dos melhores custo-benefícios entre todos os grandes parques de Orlando.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 14 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">9</div><div>Jun</div></div>
+      <div class="day-emoji">🏊</div>
+      <div class="day-header-info">
+        <div class="day-date">Segunda-feira · Dia 14 · DESCANSO</div>
+        <div class="day-title">Dia de piscina & Recarregamento</div>
+      </div>
+      <span class="day-cost cost-free">Grátis</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Manhã</span> 😴 Durma até tarde. São 7 dias de atividades intensas na semana 1 e 2!</li>
+        <li><span class="time-tag">Tarde</span> 🏊 Piscina na hospedagem. Crianças adoram, bebê pode ter banho em banheira.</li>
+        <li><span class="time-tag">16h</span> 🛒 Reposição de supermercado. Planeje refeições da semana 3.</li>
+        <li><span class="time-tag">Jantar</span> 🇧🇷 Que tal um jantar brasileiro? <strong>Texas de Brazil</strong> (~$55/adulto, crianças menores grátis) ou <strong>Rodizio Grill</strong> (~$35/adulto) — comemore a metade da viagem! Ou cozinhe churrasco em casa se tiver churrasqueira.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /week-1 -->
+
+<!-- ══════════════════════════════════════════
+  SEMANA 3
+══════════════════════════════════════════ -->
+<div class="week-panel" id="week-2">
+
+  <!-- DIA 15 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">10</div><div>Jun</div></div>
+      <div class="day-emoji">🐊</div>
+      <div class="day-header-info">
+        <div class="day-date">Terça-feira · Dia 15 · PASSEIO</div>
+        <div class="day-title">Boggy Creek Airboat + Gatorland</div>
+      </div>
+      <span class="day-cost cost-low">~$100–140</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">9h</span> 🛥️ <strong>Boggy Creek Airboat Adventures</strong> — passeio de airboat no Lago Tohopekaliga. Adultos ~$32, Crianças ~$24, Bebê: verifique com a empresa (geralmente grátis). Ver jacarés, pássaros e natureza da Flórida.</li>
+        <li><span class="time-tag">11h</span> Retorno. Almoço em casa ou lanchonete local.</li>
+        <li><span class="time-tag">14h</span> 🐊 <strong>Gatorland</strong> — se não foi na semana 1. A "Capital do Mundo do Crocodilo". Adultos ~$30 (Groupon), Crianças ~$20. Zipline over alligators para adultos (~$50 extra) — incrível!</li>
+        <li><span class="time-tag">Jantar</span> 🍗 <strong>Chick-fil-A</strong> ou <strong>IHOP</strong> — jantares baratos e as crianças adoram.</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-baby">
+          <div class="tip-title">👶 Bebê no Airboat</div>
+          Airboats são BARULHENTOS. Leve protetores auriculares para bebê (headphones específicos para bebê existem nas lojas de bebê nos EUA). Verifique política de idade mínima com a empresa antes.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Passeio mais barato de Orlando</div>
+          Boggy Creek + Gatorland juntos saem por ~$50–60/adulto — muito mais barato que qualquer parque temático e igualmente memorável!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 16 -->
+  <div class="day-card type-park" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">11</div><div>Jun</div></div>
+      <div class="day-emoji">🌿</div>
+      <div class="day-header-info">
+        <div class="day-date">Quarta-feira · Dia 16 · PARQUE</div>
+        <div class="day-title">Animal Kingdom — Walt Disney World (Bônus!)</div>
+      </div>
+      <span class="day-cost cost-high">Requer 4º dia Disney (~$130/adulto)</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">⚠️ Budget</span> Animal Kingdom requer compra de dia adicional de ingresso Disney (~$130/adulto, ~$120/criança). Avalie se está dentro do budget. Se não, substitua por dia livre ou LEGOLAND.</li>
+        <li><span class="time-tag">8h30</span> Rope drop. Primeiro: <strong>Avatar Flight of Passage</strong> — a melhor atração de toda a Disney em termos de tecnologia! Fila fica ENORME depois das 9h. Adultos e de 10 anos.</li>
+        <li><span class="time-tag">9h–11h</span> 🦒 <strong>Kilimanjaro Safaris</strong> — NENHUMA restrição de altura! Toda a família, incluindo bebê no colo. Leões, elefantes, girafas reais. Melhor às 9h–10h (animais mais ativos).</li>
+        <li><span class="time-tag">11h–12h</span> 🌊 <strong>Na'vi River Journey</strong> — passeio suave sem altura mínima, belíssimo para toda família. De 4 anos vai adorar.</li>
+        <li><span class="time-tag">12h–13h</span> Almoço: <strong>Flame Tree Barbecue</strong> (quick service, ~$14, ótimo!) ou <strong>Satu'li Canteen</strong> em Pandora.</li>
+        <li><span class="time-tag">13h–15h</span> 🦕 <strong>DINOSAUR</strong>, <strong>Expedition Everest</strong> (adultos + 10 anos). Baby swap disponível.</li>
+        <li><span class="time-tag">15h–16h</span> 🎭 <strong>Festival of the Lion King</strong> — show imperdível! De 4 anos vai adorar. Chegue 30min antes.</li>
+      </ul>
+      <div class="tips-grid">
+        <div class="tip-box tip-park">
+          <div class="tip-title">🌿 Animal Kingdom = Melhor para Família</div>
+          É o parque mais stroller-friendly e baby-friendly de toda a Disney. Muito espaço, árvores com sombra, Kilimanjaro Safaris é a atração mais inclusiva de toda a Disney.
+        </div>
+        <div class="tip-box tip-budget">
+          <div class="tip-title">💵 Alternativa econômica</div>
+          Se o orçamento apertar, substitua por <strong>LEGOLAND Florida</strong> (Winter Haven, 45min). Adultos ~$90, Crianças ~$85 com antecedência. PERFEITO para 4 e 10 anos!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIA 17 -->
+  <div class="day-card type-beach" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">12</div><div>Jun</div></div>
+      <div class="day-emoji">🌊</div>
+      <div class="day-header-info">
+        <div class="day-date">Quinta-feira · Dia 17 · PRAIA</div>
+        <div class="day-title">New Smyrna Beach — Praia tranquila & família</div>
+      </div>
+      <span class="day-cost cost-low">~$60</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">8h</span> Saída. New Smyrna Beach fica a ~1h de Orlando (I-4 East → US-1 South).</li>
+        <li><span class="time-tag">9h–13h</span> 🏖️ Praia mais tranquila e local que Cocoa Beach. Menos turistas, mais "florida real". Boa para relaxar, construir castelos de areia, banho calmo.</li>
+        <li><span class="time-tag">12h</span> Almoço: <strong>JB's Fish Camp</strong> — restaurante local incrível, frutos do mar frescos, ~$15–20/pessoa, vista para o rio. Alternativa mais barata: Publix para piquenique.</li>
+        <li><span class="time-tag">13h30</span> Canal Street NSB — rua histórica com galerias de arte, sorveterias e lojas charmosas. Passeio com stroller muito agradável.</li>
+        <li><span class="time-tag">14h30</span> Retorno antes das chuvas da tarde.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIA 18 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">13</div><div>Jun</div></div>
+      <div class="day-emoji">🧸</div>
+      <div class="day-header-info">
+        <div class="day-date">Sexta-feira · Dia 18 · PASSEIO</div>
+        <div class="day-title">LEGOLAND Florida (alternativa ao Animal Kingdom)</div>
+      </div>
+      <span class="day-cost cost-mid">~$340</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">8h30</span> Saída para Winter Haven (45min de Orlando pela I-4 West).</li>
+        <li><span class="time-tag">9h</span> Abertura LEGOLAND. É um parque FEITO para idades 2–12. Filas menores que Disney/Universal!</li>
+        <li><span class="time-tag">9h–11h</span> 🧱 <strong>MINILAND USA</strong> — cidades americanas em LEGO (NY, Las Vegas, Kennedy Space Center!). O de 10 anos vai amar. Para o de 4 anos: DUPLO Valley, todo em LEGO grande.</li>
+        <li><span class="time-tag">11h–12h</span> 🎢 Coastersaurus, Dragon Coaster — atrações para 4 e 10 anos com alturas razoáveis.</li>
+        <li><span class="time-tag">12h–13h</span> Almoço dentro do parque (~$12–15/pessoa).</li>
+        <li><span class="time-tag">13h–15h</span> 💦 <strong>LEGOLAND Water Park</strong> — separado (ingresso combo disponível). Perfeito para a tarde quente! Build-a-raft river, Splash Out.</li>
+        <li><span class="time-tag">15h30</span> Retorno. Jantar no caminho: <strong>Cracker Barrel</strong> em Kissimmee.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIA 19 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">14</div><div>Jun</div></div>
+      <div class="day-emoji">😎</div>
+      <div class="day-header-info">
+        <div class="day-date">Sábado · Dia 19 · LIVRE</div>
+        <div class="day-title">Dia Livre — Escolha sua aventura!</div>
+      </div>
+      <span class="day-cost cost-free">~$0–50</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Opção A</span> 🌳 <strong>Lake Eola Park</strong> (Downtown Orlando) — parque gratuito com lago, patos, pedalinhos ($15/30min), playground para crianças. Muito agradável para família.</li>
+        <li><span class="time-tag">Opção B</span> 🎨 <strong>Orlando Museum of Art</strong> (~$15/adulto, crianças grátis) — exposições interessantes para adultos.</li>
+        <li><span class="time-tag">Opção C</span> 🏊 Piscina em casa + churrasco. Compre carne no Walmart e faça o clássico brasileiro!</li>
+        <li><span class="time-tag">Opção D</span> 🛍️ <strong>Orlando Premium Outlets</strong> ou <strong>Vineland Premium Outlets</strong> — compras com descontos. Perfeito para souvenirs mais baratos e roupas de marca!</li>
+        <li><span class="time-tag">Jantar</span> 🍣 <strong>Nagoya Sushi</strong> ou qualquer restaurante que a família queira experimentar. Budget livre nesse dia.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIA 20 -->
+  <div class="day-card type-rest" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">15</div><div>Jun</div></div>
+      <div class="day-emoji">🛍️</div>
+      <div class="day-header-info">
+        <div class="day-date">Domingo · Dia 20 · COMPRAS</div>
+        <div class="day-title">Outlets + Disney Springs + Preparação para partida</div>
+      </div>
+      <span class="day-cost cost-mid">~$100–200 (souvenirs)</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Manhã</span> 🛍️ <strong>Orlando Vineland Premium Outlets</strong> (perto do Disney) — Nike, Under Armour, Gap, Kate Spade, Disney Store Outlet. Souvenirs Disney muito mais baratos aqui do que dentro dos parques!</li>
+        <li><span class="time-tag">12h</span> Almoço: food trucks na I-Drive ou restaurante favorito da viagem.</li>
+        <li><span class="time-tag">14h</span> 🛍️ <strong>Disney Springs</strong> uma última vez — The LEGO Store, World of Disney. Compre lembranças finais.</li>
+        <li><span class="time-tag">16h</span> Início da preparação para partida: organizar malas, lavar roupas, checar voo de amanhã.</li>
+        <li><span class="time-tag">Jantar</span> 🍔 <strong>The Ravenous Pig</strong> (gastropub em Winter Park — excelente), ou mais simples: <strong>Five Guys</strong> (~$12/pessoa).</li>
+        <li><span class="time-tag">Noite</span> Dormir cedo — viagem de retorno amanhã!</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIA 21 -->
+  <div class="day-card type-depart" onclick="toggle(this)">
+    <div class="day-header">
+      <div class="day-badge"><div class="day-num">16</div><div>Jun</div></div>
+      <div class="day-emoji">✈️</div>
+      <div class="day-header-info">
+        <div class="day-date">Segunda-feira · Dia 21 · PARTIDA</div>
+        <div class="day-title">Última manhã & Voo de volta</div>
+      </div>
+      <span class="day-cost cost-free">—</span>
+    </div>
+    <div class="divider"></div>
+    <div class="day-body">
+      <ul class="schedule">
+        <li><span class="time-tag">Manhã</span> Café final com o que sobrou em casa. Últimas fotos e memórias.</li>
+        <li><span class="time-tag">Check-out</span> Devolva o carro alugado com tanque cheio (postos de gasolina próximos ao MCO: Wawa na SR-528).</li>
+        <li><span class="time-tag">MCO</span> Chegue 3h antes do voo internacional. Terminal do MCO é grande — conte com o tempo!</li>
+        <li><span class="time-tag">🎉</span> <strong>21 dias incríveis completos!</strong> Vocês fizeram Disney, Epic Universe, SeaWorld, 3 praias, Kennedy Space Center, Gatorland e muito mais!</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /week-2 -->
+
+<!-- DICAS GERAIS -->
+<div class="global-tips">
+  <h2>🧠 Guia Completo de Dicas</h2>
+  <div class="tips-big-grid">
+
+    <div class="tip-big-card card-pink">
+      <h3>👶 Bebê de 6 Meses nos Parques</h3>
+      <ul>
+        <li>Leve <strong>stroller/carrinho</strong> próprio — essencial em TODOS os parques</li>
+        <li><strong>Baby Care Centers</strong> em todos os parques Disney — fraldas, sala de amamentação, microondas</li>
+        <li>Chapéu e roupinha UV + protetor solar SPF 50+ pediátrico</li>
+        <li>Horário de pico de calor (13h–16h) = hora da soneca em local fresco</li>
+        <li><strong>Baby swap</strong> disponível na Universal e Disney — adultos revezam sem pegar fila</li>
+        <li>Leve tenda UV para praias (UPF 50+)</li>
+        <li>Fórmula/comida: compre em quantidade no Walmart (mais barato)</li>
+        <li>Protetores auriculares para bebê são recomendados (barulho nos parques)</li>
+      </ul>
+    </div>
+
+    <div class="tip-big-card card-green">
+      <h3>💵 Maximizar o Budget de $5.000</h3>
+      <ul>
+        <li><strong>Ingressos Disney:</strong> compre no <em>Undercover Tourist</em> (5–10% off)</li>
+        <li><strong>SeaWorld:</strong> sempre procure no Groupon (30–40% off)</li>
+        <li><strong>Universal:</strong> compre no site oficial com antecedência</li>
+        <li>Café da manhã sempre em casa — economiza $30–40/dia</li>
+        <li>Leve garrafa de água reutilizável — água grátis na Disney</li>
+        <li>Leve snacks da mochila para os parques</li>
+        <li>Souvenirs Disney: compre no <em>Vineland Outlets</em>, não nos parques</li>
+        <li>Evite "character dining" — muito caro (~$60/pessoa)</li>
+        <li>Quick Service > Table Service para economizar</li>
+        <li>Apps de parques ajudam a evitar filas e economizar tempo</li>
+      </ul>
+    </div>
+
+    <div class="tip-big-card card-blue">
+      <h3>🌡️ Junho na Flórida — Sobreviver ao Calor</h3>
+      <ul>
+        <li>Temperatura: 33–38°C com sensação de 40°C+ (alta umidade)</li>
+        <li><strong>Tempestades à tarde</strong> entre 14h–18h são normais — carregue capa de chuva descartável (~$2)</li>
+        <li>Estratégia: chegue cedo (rope drop) e saia no pico do calor (13h–16h)</li>
+        <li>Misting fans (leques de névoa) são baratos e salvam a vida</li>
+        <li>Roupas de tecido sintético leve (dry-fit) são melhores que algodão</li>
+        <li>Hidratação constante — especialmente bebê e criança de 4 anos</li>
+        <li>Calçado confortável para caminhar 10–15km/dia</li>
+        <li>Protetor solar SPF 50+ — reaplicar a cada 2h</li>
+      </ul>
+    </div>
+
+    <div class="tip-big-card card-yellow">
+      <h3>🚗 Transporte & Logística</h3>
+      <ul>
+        <li>Carro alugado é <strong>essencial</strong> para família com 5 pessoas em Orlando</li>
+        <li>Alugue SUV ou minivan — comporta família + stroller + malas confortavelmente</li>
+        <li><strong>Alamo/National</strong>: melhores preços com reserva antecipada</li>
+        <li>I-4 é a principal via — pode ter tráfego pesado das 16h–19h</li>
+        <li>Estacionamento Disney: ~$30/dia (gratuito para hóspedes resorts Disney)</li>
+        <li>Estacionamento Universal: ~$30/dia</li>
+        <li>GPS no celular (Google Maps/Waze) funciona perfeitamente nos EUA</li>
+        <li>Guarde <strong>ticket de estacionamento</strong> e anote o andar sempre!</li>
+      </ul>
+    </div>
+
+    <div class="tip-big-card card-purple">
+      <h3>🎢 Estratégia de Parques</h3>
+      <ul>
+        <li><strong>Rope Drop</strong> (chegar na abertura) = a técnica mais valiosa de todas</li>
+        <li>Baixe os apps: <em>My Disney Experience</em> e <em>Universal Orlando</em> antes de sair do Brasil/Canadá</li>
+        <li>Lightning Lane (Disney) custa $7–$15/atração — use estrategicamente</li>
+        <li>Virtual Queue (Epic Universe) — entre assim que o app abrir às 7h do dia</li>
+        <li>Deixe os parques mais animados para crianças (MK, Hollywood Studios, Toy Story) nos primeiros dias — quando todo mundo ainda tem energia!</li>
+        <li>Semana do dia 27 mai + 28 mai = possível multidão de Memorial Day — planeje!</li>
+        <li>Dias mais tranquilos em parques: terças e quartas</li>
+        <li>Dias mais movimentados: fins de semana e segundas-feiras</li>
+      </ul>
+    </div>
+
+    <div class="tip-big-card card-coral">
+      <h3>🍽️ Restaurantes Econômicos fora dos Parques</h3>
+      <ul>
+        <li><strong>Cracker Barrel</strong> — comida americana caseira, ~$12/pessoa, ótimo para família</li>
+        <li><strong>Chick-fil-A</strong> — frango frito delicioso, ~$8–10/pessoa</li>
+        <li><strong>Chipotle</strong> — burritos generosos, ~$10–12/pessoa</li>
+        <li><strong>Olive Garden</strong> — unlimited breadsticks + salada, ~$15/pessoa</li>
+        <li><strong>IHOP/Denny's</strong> — café da manhã farto, ~$10/pessoa</li>
+        <li><strong>Publix Deli</strong> — subs (sanduíches) por $6–8, perfeitos para piquenique</li>
+        <li><strong>Walmart Deli</strong> — frango assado inteiro por ~$8, ótimo para jantar em casa</li>
+        <li>🇧🇷 Saudade do Brasil? <strong>Rodizio Grill</strong> em I-Drive (~$35/adulto)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>Roteiro criado com ❤️ para <strong>Família Labone</strong> — Orlando, Flórida 2026</p>
+  <p style="margin-top:8px">27 de Maio → 16 de Junho · 21 dias · 2 adultos · 3 crianças (10 anos, 4 anos, 6 meses)</p>
+  <p style="margin-top:8px;opacity:0.5;font-size:0.72rem">Preços estimados baseados em 2025–2026. Verifique valores atualizados nos sites oficiais antes da viagem.</p>
+</footer>
+
+<script>
+  function toggle(card) {
+    const body = card.querySelector('.day-body');
+    body.classList.toggle('open');
+  }
+
+  function showWeek(idx) {
+    document.querySelectorAll('.week-panel').forEach((p,i) => {
+      p.classList.toggle('active', i === idx);
+    });
+    document.querySelectorAll('.week-tab').forEach((t,i) => {
+      t.classList.toggle('active', i === idx);
+    });
+  }
+
+  function openAll() {
+    document.querySelectorAll('.week-panel').forEach(p => p.classList.add('active'));
+    document.querySelectorAll('.week-tab').forEach(t => t.classList.add('active'));
+    document.querySelectorAll('.day-body').forEach(b => b.classList.add('open'));
+  }
+
+  function closeAll() {
+    document.querySelectorAll('.day-body').forEach(b => b.classList.remove('open'));
+  }
+</script>
+</body>
+</html>
